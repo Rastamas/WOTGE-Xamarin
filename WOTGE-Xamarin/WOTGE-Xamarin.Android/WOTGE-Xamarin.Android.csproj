@@ -92,9 +92,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WOTGE_Xamarin\WOTGE_Xamarin.csproj">
-      <Project>{0AEA3625-2B3B-4E48-9B8C-17D2FF6E3144}</Project>
-      <Name>WOTGE_Xamarin</Name>
+    <ProjectReference Include="..\WOTGE-Xamarin\WOTGE-Xamarin.csproj">
+      <Project>{663d8bd3-d6b7-41fb-aed0-079134236588}</Project>
+      <Name>WOTGE-Xamarin</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
