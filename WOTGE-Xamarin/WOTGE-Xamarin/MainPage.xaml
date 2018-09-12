@@ -5,10 +5,14 @@
              x:Class="WOTGE_Xamarin.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
 
+        <Button Text="FOR THE EMPEROR!" 
+                Font="Fonts/CaslonAntiqueBold.ttf#CaslonAntiqueBold" 
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                />
+        
+    </StackLayout>
+    
 </ContentPage>
