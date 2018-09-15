@@ -14,7 +14,8 @@ namespace WOTGE_Xamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //TODO: Just don't
+            MainPage = new MainPage(new Services.QuoteService(new System.Net.Http.HttpClient()));
         }
 
         protected override void OnStart()

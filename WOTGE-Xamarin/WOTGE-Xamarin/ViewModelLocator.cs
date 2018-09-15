@@ -19,7 +19,7 @@ namespace WOTGE_Xamarin
         private void RegisterServices()
         {
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
-            //SimpleIoc.Default.Register<IOrderService>(() => OrderServiceMockFactory.CreateOrderServiceMock().Object);
+            SimpleIoc.Default.Register<IQuoteService, QuoteService>();
         }
 
         private void RegisterViewModels()

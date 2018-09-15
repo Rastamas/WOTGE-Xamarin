@@ -4,15 +4,40 @@
              xmlns:local="clr-namespace:WOTGE_Xamarin"
              x:Class="WOTGE_Xamarin.MainPage">
 
-    <StackLayout>
+    <RelativeLayout>
+
+        <Label x:Name="DailyQuoteLabel"
+               TextColor="Black"
+               Font="Fonts/CaslonAntiqueBold.ttf#CaslonAntiqueBold"
+               FontSize="Large"
+               FontAttributes="Bold"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=.8,
+                             Constant=0}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=0.2}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=0.4}"
+               />
 
         <Button Text="FOR THE EMPEROR!" 
                 Font="Fonts/CaslonAntiqueBold.ttf#CaslonAntiqueBold" 
-                FontSize="Medium"
+                FontSize="Large"
                 HorizontalOptions="Center"
                 VerticalOptions="End"
+                Clicked="SetDailyQuoteAsync"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Width,
+                             Factor=0.5,
+                             Constant=-99.875}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                             Property=Height,
+                             Factor=0.9}"
                 />
         
-    </StackLayout>
+    </RelativeLayout>
     
 </ContentPage>
