@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:wotge_xamarin="clr-namespace:WOTGE_Xamarin"
              x:Class="WOTGE_Xamarin.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <wotge_xamarin:ViewModelLocator x:Key="Locator"></wotge_xamarin:ViewModelLocator>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,6 +1,8 @@
 ﻿using CommonServiceLocator;
 using GalaSoft.MvvmLight.Ioc;
+using System.Net.Http;
 using WOTGE_Xamarin.Services;
+using WOTGE_Xamarin.ViewModels;
 
 namespace WOTGE_Xamarin
 {
@@ -14,17 +16,18 @@ namespace WOTGE_Xamarin
             SetupNavigation();
         }
 
-        //public StartViewModel Start => ServiceLocator.Current.GetInstance<StartViewModel>();
+        public MainPageViewModel Main => ServiceLocator.Current.GetInstance<MainPageViewModel>();
 
         private void RegisterServices()
         {
             SimpleIoc.Default.Register<INavigationService, NavigationService>();
             SimpleIoc.Default.Register<IQuoteService, QuoteService>();
+            SimpleIoc.Default.Register(() => new HttpClient());
         }
 
         private void RegisterViewModels()
         {
-            //SimpleIoc.Default.Register<StartViewModel>();
+            SimpleIoc.Default.Register<MainPageViewModel>();
         }
 
         private void SetupNavigation()
