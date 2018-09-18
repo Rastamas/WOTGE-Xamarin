@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using WOTGE_Xamarin.Interfaces;
 
 namespace WOTGE_Xamarin.Services
 {
@@ -12,10 +13,12 @@ namespace WOTGE_Xamarin.Services
         private const string DefaultQuote = "Hope is the first step on the road to disappointment";
 
         private readonly HttpClient _httpClient;
+        private readonly INotifierService _notifier;
 
-        public QuoteService(HttpClient httpClient)
+        public QuoteService(HttpClient httpClient, INotifierService notifier)
         {
             _httpClient = httpClient;
+            _notifier = notifier;
         }
 
         public async Task<string> GetQuoteAsync()
@@ -42,8 +45,8 @@ namespace WOTGE_Xamarin.Services
             }
             catch (Exception e)
             {
-                // TODO: Show toast message
-                throw e;
+                _notifier.Notify("Network error");
+                return null;
             }
         }
 

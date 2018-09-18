@@ -1,11 +1,9 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using GalaSoft.MvvmLight.Ioc;
+using WOTGE_Xamarin.Droid.Services;
+using WOTGE_Xamarin.Interfaces;
 
 namespace WOTGE_Xamarin.Droid
 {
@@ -19,7 +17,15 @@ namespace WOTGE_Xamarin.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            RegisterDroidServices();
+
             LoadApplication(new App());
+        }
+
+        private void RegisterDroidServices()
+        {
+            SimpleIoc.Default.Register<INotifierService>(() => new ToastNotiferService(this));
         }
     }
 }
